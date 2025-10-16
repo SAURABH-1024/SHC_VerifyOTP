@@ -27,13 +27,7 @@ Create a `.env` file in the root folder with the below content:
 
 MONGO_URI="YOUR MONGO URI/localhost"
 PORT=3000
-
-TWOFACTOR_API_KEY & JWT_SECRET is mentioned in the .env 
->  AS THIS IS A TEST PROJECT, I HAVE PROVIDED THE API KEYS AND INCLUDED THE .ENV FILE IN THE GITHUB REPO. 
-
-
-> The `TWOFACTOR_API_KEY` provided here is a public demo key and will be deleted soon after the interview. Use only for testing.
-
+TWOFACTOR_API_KEY & JWT_SECRET 
 ---
 
 ### Step 4: Start the Server

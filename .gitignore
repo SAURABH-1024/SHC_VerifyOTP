@@ -1,4 +1,8 @@
+# Dependencies
 node_modules/
 
-# Ignore package-lock.json
-package-lock.json
+# Environment variables
+.env
+
+# Serverless build folder
+.serverless/
