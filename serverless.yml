@@ -1,0 +1,19 @@
+service: phone-verification-api
+
+org: saam1024
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  environment:
+    MONGO_URI: ${env:MONGO_URI}
+    TWOFACTOR_API_KEY: ${env:TWOFACTOR_API_KEY}
+    JWT_SECRET: ${env:JWT_SECRET}
+
+functions:
+  app:
+    handler: app.handler
+    events:
+      - httpApi:
+          path: /{proxy+}
+          method: ANY

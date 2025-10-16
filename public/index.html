@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phone Verification</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f7f7f7;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #222;
+    }
+    .container {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      width: 320px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #333;
+    }
+    input {
+      width: 100%;
+      padding: 12px 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 12px 0;
+      background: #007bff;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 10px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .small-text {
+      font-size: 14px;
+      color: #666;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Phone Verification</h2>
+    <input id="phone" type="tel" placeholder="Enter phone number" />
+    <button onclick="requestCode()">Request OTP Code</button>
+    <input id="otp" type="text" placeholder="Enter OTP code" />
+    <button onclick="verifyCode()">Verify OTP</button>
+  </div>
+
+  <script>
+  const API_URL = 'https://hi6n4zcjrd.execute-api.us-east-1.amazonaws.com';
+  const requestBtn = document.querySelector('button[onclick="requestCode()"]');
+  
+  let timer = null;
+  let countdown = 30;
+
+  async function requestCode() {
+    const phone = document.getElementById('phone').value;
+    if (!phone) {
+      alert('Please enter your phone number');
+      return;
+    }
+
+    // Disable the button and set timer text
+    requestBtn.disabled = true;
+    requestBtn.textContent = `Please wait (${countdown}s)`;
+
+    const res = await fetch(`${API_URL}/api/auth/request-code`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ phone })
+    });
+
+    if (res.ok) {
+      alert('OTP sent! Check your phone.');
+      startCountdown();
+    } else {
+      alert('Failed to send OTP');
+      resetRequestButton();
+    }
+  }
+
+  function startCountdown() {
+    timer = setInterval(() => {
+      countdown--;
+      requestBtn.textContent = `Please wait (${countdown}s)`;
+      if (countdown <= 0) {
+        clearInterval(timer);
+        resetRequestButton(true);
+      }
+    }, 1000);
+  }
+
+  function resetRequestButton(enableResend = false) {
+    requestBtn.disabled = false;
+    countdown = 30;
+    requestBtn.textContent = enableResend ? 'Resend OTP' : 'Request OTP Code';
+  }
+
+  async function verifyCode() {
+    const phone = document.getElementById('phone').value;
+    const otp = document.getElementById('otp').value;
+    if (!phone || !otp) {
+      alert('Please enter both phone number and OTP');
+      return;
+    }
+
+    const res = await fetch(`${API_URL}/api/auth/verify-code`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ phone, otp })
+    });
+
+    const data = await res.json();
+    if (res.ok && data.verified) {
+      window.location.href = '/thank-you.html';
+    } else {
+      alert('Verification failed: ' + (data.error || 'Unknown error'));
+    }
+  }
+</script>
+
+</body>
+</html>
