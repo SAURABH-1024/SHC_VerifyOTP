@@ -108,7 +108,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-us-east-1-8a932580-edec",
-                "S3Key": "serverless/phone-verification-api/dev/1760603408838-2025-10-16T08:30:08.838Z/phone-verification-api.zip"
+                "S3Key": "serverless/phone-verification-api/dev/1760605754915-2025-10-16T09:09:14.915Z/phone-verification-api.zip"
               },
               "Handler": "app.handler",
               "Runtime": "nodejs18.x",
@@ -133,14 +133,14 @@
               "AppLogGroup"
             ]
           },
-          "AppLambdaVersionWO3SbBDx2dwd6zoKHj4DbJkkIUMnNYP5JFnMDIJ1VKA": {
+          "AppLambdaVersion2us0KuUHiyc9T8swOnubwVNU91loPAA0UjfXNVbBU": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "+Af+sVNFEbhtebpd/wk8KviSjiTg3pEeWavDFeVEIA8="
+              "CodeSha256": "VKSZzjRqdx/GVpOZUZkF8IpjvhY0OT6cTf92BelD0D8="
             }
           },
           "HttpApi": {
@@ -246,7 +246,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersionWO3SbBDx2dwd6zoKHj4DbJkkIUMnNYP5JFnMDIJ1VKA"
+              "Ref": "AppLambdaVersion2us0KuUHiyc9T8swOnubwVNU91loPAA0UjfXNVbBU"
             },
             "Export": {
               "Name": "sls-phone-verification-api-dev-AppLambdaFunctionQualifiedArn"
@@ -310,7 +310,7 @@
         "timeout": 6,
         "runtime": "nodejs18.x",
         "vpc": {},
-        "versionLogicalId": "AppLambdaVersionWO3SbBDx2dwd6zoKHj4DbJkkIUMnNYP5JFnMDIJ1VKA"
+        "versionLogicalId": "AppLambdaVersion2us0KuUHiyc9T8swOnubwVNU91loPAA0UjfXNVbBU"
       }
     },
     "configValidationMode": "warn",
@@ -332,7 +332,7 @@
     "artifact": "C:\\Users\\saurabh.ambesange\\OneDrive - Accenture\\Desktop\\coding practice\\SHC assignment\\.serverless\\phone-verification-api.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/phone-verification-api/dev/1760603408838-2025-10-16T08:30:08.838Z",
+    "artifactDirectoryName": "serverless/phone-verification-api/dev/1760605754915-2025-10-16T09:09:14.915Z",
     "artifact": "phone-verification-api.zip"
   }
 }

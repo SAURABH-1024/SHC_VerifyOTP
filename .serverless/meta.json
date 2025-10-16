@@ -110,7 +110,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-8a932580-edec",
-                  "S3Key": "serverless/phone-verification-api/dev/1760603408838-2025-10-16T08:30:08.838Z/phone-verification-api.zip"
+                  "S3Key": "serverless/phone-verification-api/dev/1760605754915-2025-10-16T09:09:14.915Z/phone-verification-api.zip"
                 },
                 "Handler": "app.handler",
                 "Runtime": "nodejs18.x",
@@ -135,14 +135,14 @@
                 "AppLogGroup"
               ]
             },
-            "AppLambdaVersionWO3SbBDx2dwd6zoKHj4DbJkkIUMnNYP5JFnMDIJ1VKA": {
+            "AppLambdaVersion2us0KuUHiyc9T8swOnubwVNU91loPAA0UjfXNVbBU": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "AppLambdaFunction"
                 },
-                "CodeSha256": "+Af+sVNFEbhtebpd/wk8KviSjiTg3pEeWavDFeVEIA8="
+                "CodeSha256": "VKSZzjRqdx/GVpOZUZkF8IpjvhY0OT6cTf92BelD0D8="
               }
             },
             "HttpApi": {
@@ -251,7 +251,7 @@
             "AppLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "AppLambdaVersionWO3SbBDx2dwd6zoKHj4DbJkkIUMnNYP5JFnMDIJ1VKA"
+                "Ref": "AppLambdaVersion2us0KuUHiyc9T8swOnubwVNU91loPAA0UjfXNVbBU"
               },
               "Export": {
                 "Name": "sls-phone-verification-api-dev-AppLambdaFunctionQualifiedArn"
@@ -314,7 +314,7 @@
           "timeout": 6,
           "runtime": "nodejs18.x",
           "vpc": {},
-          "versionLogicalId": "AppLambdaVersionWO3SbBDx2dwd6zoKHj4DbJkkIUMnNYP5JFnMDIJ1VKA"
+          "versionLogicalId": "AppLambdaVersion2us0KuUHiyc9T8swOnubwVNU91loPAA0UjfXNVbBU"
         }
       }
     },
@@ -422,7 +422,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-us-east-1-8a932580-edec",
-                "S3Key": "serverless/phone-verification-api/dev/1760603408838-2025-10-16T08:30:08.838Z/phone-verification-api.zip"
+                "S3Key": "serverless/phone-verification-api/dev/1760605754915-2025-10-16T09:09:14.915Z/phone-verification-api.zip"
               },
               "Handler": "app.handler",
               "Runtime": "nodejs18.x",
@@ -447,14 +447,14 @@
               "AppLogGroup"
             ]
           },
-          "AppLambdaVersionWO3SbBDx2dwd6zoKHj4DbJkkIUMnNYP5JFnMDIJ1VKA": {
+          "AppLambdaVersion2us0KuUHiyc9T8swOnubwVNU91loPAA0UjfXNVbBU": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "+Af+sVNFEbhtebpd/wk8KviSjiTg3pEeWavDFeVEIA8="
+              "CodeSha256": "VKSZzjRqdx/GVpOZUZkF8IpjvhY0OT6cTf92BelD0D8="
             }
           },
           "HttpApi": {
@@ -563,7 +563,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersionWO3SbBDx2dwd6zoKHj4DbJkkIUMnNYP5JFnMDIJ1VKA"
+              "Ref": "AppLambdaVersion2us0KuUHiyc9T8swOnubwVNU91loPAA0UjfXNVbBU"
             },
             "Export": {
               "Name": "sls-phone-verification-api-dev-AppLambdaFunctionQualifiedArn"
@@ -629,12 +629,12 @@
     "serviceProviderAwsCfStackName": "phone-verification-api-dev",
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:713741665298:stack/phone-verification-api-dev/26f2b200-aa15-11f0-b75e-1201153c7565",
     "serviceProviderAwsCfStackCreated": "2025-10-15T22:20:27.429Z",
-    "serviceProviderAwsCfStackUpdated": "2025-10-16T05:13:17.352Z",
+    "serviceProviderAwsCfStackUpdated": "2025-10-16T08:31:14.464Z",
     "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "AppLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:713741665298:function:phone-verification-api-dev-app:5",
+        "OutputValue": "arn:aws:lambda:us-east-1:713741665298:function:phone-verification-api-dev-app:6",
         "Description": "Current Lambda function version",
         "ExportName": "sls-phone-verification-api-dev-AppLambdaFunctionQualifiedArn"
       },
@@ -749,7 +749,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-us-east-1-8a932580-edec",
-              "S3Key": "serverless/phone-verification-api/dev/1760603408838-2025-10-16T08:30:08.838Z/phone-verification-api.zip"
+              "S3Key": "serverless/phone-verification-api/dev/1760605754915-2025-10-16T09:09:14.915Z/phone-verification-api.zip"
             },
             "Handler": "app.handler",
             "Runtime": "nodejs18.x",
@@ -774,14 +774,14 @@
             "AppLogGroup"
           ]
         },
-        "AppLambdaVersionWO3SbBDx2dwd6zoKHj4DbJkkIUMnNYP5JFnMDIJ1VKA": {
+        "AppLambdaVersion2us0KuUHiyc9T8swOnubwVNU91loPAA0UjfXNVbBU": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "AppLambdaFunction"
             },
-            "CodeSha256": "+Af+sVNFEbhtebpd/wk8KviSjiTg3pEeWavDFeVEIA8="
+            "CodeSha256": "VKSZzjRqdx/GVpOZUZkF8IpjvhY0OT6cTf92BelD0D8="
           }
         },
         "HttpApi": {
@@ -890,7 +890,7 @@
         "AppLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "AppLambdaVersionWO3SbBDx2dwd6zoKHj4DbJkkIUMnNYP5JFnMDIJ1VKA"
+            "Ref": "AppLambdaVersion2us0KuUHiyc9T8swOnubwVNU91loPAA0UjfXNVbBU"
           },
           "Export": {
             "Name": "sls-phone-verification-api-dev-AppLambdaFunctionQualifiedArn"
