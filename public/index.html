@@ -69,6 +69,7 @@
   </div>
 
   <script>
+//const API_URL = 'https://localhost:3000'
   const API_URL = 'https://hi6n4zcjrd.execute-api.us-east-1.amazonaws.com';
   const requestBtn = document.querySelector('button[onclick="requestCode()"]');
   
@@ -82,7 +83,7 @@
       return;
     }
 
-    // Disable the button and set timer text
+    // Disable the button and set timer text so that user cannot retry the button a
     requestBtn.disabled = true;
     requestBtn.textContent = `Please wait (${countdown}s)`;
 
